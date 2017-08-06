@@ -1,3 +1,6 @@
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" prepare environment and install plugin-manager for first use
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " auto install plugs in .vimrc
 " https://github.com/junegunn/vim-plug/wiki/faq
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -19,6 +22,9 @@ if empty(glob('~/.vim/undo_files'))
 silent !mkdir ~/.vim/undo_files > /dev/null 2>&1
 endif
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" install Plugins with plugin-manger
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim: set foldmarker={{{,}}} foldlevel=0 foldmethod=marker tabstop=4 shiftwidth=4:
 
 " Environment {{{
@@ -66,7 +72,7 @@ call plug#end()
 " }}}
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" appearance
+" visual appearance
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set number
 set relativenumber
@@ -132,13 +138,9 @@ autocmd FileType ruby,yaml set expandtab shiftwidth=2 softtabstop=2 tabstop=2
 " auto save and reload .vimrc
 autocmd BufWritePost .vimrc source $MYVIMRC
 
-
-
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "plugin settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 "vim-autoformat
 let b:formatdef_custom_c='"astyle --mode=c --style=1tbs"'
 let b:formatters_c = ['custom_c']
@@ -182,7 +184,6 @@ let g:syntastic_warning_symbol = '⚠️'
 let g:syntastic_style_warning_symbol = '💩'
 let g:syntastic_error_symbol = '✗✗'
 
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " keybindings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -214,7 +215,7 @@ nmap <leader>bl :ls<CR>
 nmap <leader>m :make
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" functions
+" special functions
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Filebin
 function! Filebin(start, end)
